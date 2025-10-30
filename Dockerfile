@@ -26,7 +26,7 @@ RUN pip install --no-cache-dir -r requirements.txt \
 
 # Copy application code and assets
 COPY "App (1).py" ./
-COPY Logo ./Logo
+COPY logo2.png ./logo2.png
 RUN mkdir -p Uploaded_Resumes && chmod -R 777 Uploaded_Resumes
 
 # Streamlit config: run headless on provided PORT
