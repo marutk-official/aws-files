@@ -212,7 +212,7 @@ def insert_data(name,email,res_score,timestamp,no_of_pages,reco_field,cand_level
 
 st.set_page_config(
    page_title="AI Resume Analyzer",
-   page_icon='./Logo/logo2.png',
+   page_icon='./logo2.png',
 )
 def run():
     # Theme adjustments and contrast fixes
@@ -231,7 +231,7 @@ def run():
         """,
         unsafe_allow_html=True,
     )
-    img = Image.open('./Logo/logo2.png')
+    img = Image.open('./logo2.png')
     # img = img.resize((250,250))
     st.image(img)
     st.title("AI Resume Analyser")
