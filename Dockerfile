@@ -25,7 +25,7 @@ RUN pip install --no-cache-dir -r requirements.txt \
        https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.3.1/en_core_web_sm-2.3.1.tar.gz
 
 # Copy application code and assets
-COPY "App (1).py" ./
+COPY "app.py" ./
 COPY logo2.png ./logo2.png
 RUN mkdir -p Uploaded_Resumes && chmod -R 777 Uploaded_Resumes
 
@@ -40,6 +40,6 @@ EXPOSE 8501
 HEALTHCHECK --interval=30s --timeout=5s --retries=3 CMD curl -f http://localhost:${PORT:-8501}/_stcore/health || exit 1
 
 # Start the app. App Runner sets PORT; default to 8501 for local runs.
-CMD ["/bin/sh", "-c", "streamlit run 'App (1).py' --server.port=${PORT:-8501} --server.address=0.0.0.0 --server.enableCORS=false --server.enableXsrfProtection=false"]
+CMD ["/bin/sh", "-c", "streamlit run 'app.py' --server.port=${PORT:-8501} --server.address=0.0.0.0 --server.enableCORS=false --server.enableXsrfProtection=false"]
 
 
